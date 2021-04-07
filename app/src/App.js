@@ -1,7 +1,20 @@
+import {useEffect} from 'react'
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+
+  useEffect(() => {
+    
+    /**
+     * Example: axios.get('http://localhost:{WEBSERVER_PORT}'))
+     */
+    
+    axios.get('http://localhost:800').then(res => console.log(res))
+
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">

@@ -65,7 +65,6 @@ services:
       stdin_open: true
       volumes:
           - ${CODE_PATH}:/home/node/base-react-laravel
-          - /home/node/base-react-laravel/app/node_modules
       networks:
         static-network:
           ipv4_address: 172.20.128.13
