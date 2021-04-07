@@ -1,11 +1,11 @@
 FROM node:12
 
 USER node
-RUN mkdir -p /home/node/app
-WORKDIR /home/node/app
+RUN mkdir -p /home/node/base-react-laravel/app
+WORKDIR /home/node/base-react-laravel/app
 
-COPY --chown=node:node ./react/package*.json .
-COPY --chown=node:node ./react/yarn.lock .
+COPY --chown=node:node ./app/package*.json .
+COPY --chown=node:node ./app/yarn.lock .
 
 RUN yarn --pure-lockfile
 
