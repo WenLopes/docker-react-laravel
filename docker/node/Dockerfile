@@ -1,8 +1,8 @@
 FROM node:12
 
 USER node
-RUN mkdir -p /home/node/base-react-laravel/app
-WORKDIR /home/node/base-react-laravel/app
+RUN mkdir -p /home/node/docker-react-laravel/app
+WORKDIR /home/node/docker-react-laravel/app
 
 COPY --chown=node:node ./app/package*.json .
 COPY --chown=node:node ./app/yarn.lock .

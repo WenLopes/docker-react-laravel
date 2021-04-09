@@ -1,5 +1,5 @@
 FROM phpdockerio/php73-fpm:latest
-WORKDIR /base-react-laravel/api
+WORKDIR /docker-react-laravel/api
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive

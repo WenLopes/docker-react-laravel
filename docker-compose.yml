@@ -31,9 +31,9 @@ services:
     nginx_base:
       image: nginx
       container_name: nginx_base
-      working_dir: /base-react-laravel
+      working_dir: /docker-react-laravel
       volumes:
-        - ${CODE_PATH}:/base-react-laravel
+        - ${CODE_PATH}:/docker-react-laravel
         - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         - ./docker/nginx/api.conf:/etc/nginx/sites-enabled/api.conf
       extra_hosts:
@@ -49,7 +49,7 @@ services:
       build: ./docker/php
       container_name: php7_base
       volumes:
-        - ${CODE_PATH}:/base-react-laravel
+        - ${CODE_PATH}:/docker-react-laravel
         - ./docker/php/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
       networks:
         static-network:
@@ -64,7 +64,8 @@ services:
         - "${REACT_PORT}:3000"
       stdin_open: true
       volumes:
-          - ${CODE_PATH}:/home/node/base-react-laravel
+          - ${CODE_PATH}:/home/node/docker-react-laravel
+          - /home/node/docker-react-laravel/app/node_modules
       networks:
         static-network:
           ipv4_address: 172.20.128.13
