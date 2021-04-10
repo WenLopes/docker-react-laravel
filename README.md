@@ -28,7 +28,7 @@ As seguintes tecnologias estão incluídas:
 * git clone https://github.com/WenLopes/docker-react-laravel.git
 
 ### 2. Configure as variáveis de ambiente
-> Na **raiz do projeto**, crie o arquivo .env utilizando o arquivo .env.example como base. Modifique o valor das variáveis de acordo com a sua preferência.
+*Na **raiz do projeto**, crie o arquivo .env utilizando o arquivo .env.example como base. Modifique o valor das variáveis de acordo com a sua preferência.*
 
 * cp .env_example .env
 
@@ -38,14 +38,17 @@ As seguintes tecnologias estão incluídas:
 * docker-compose up --build
 
 ### 4. Instalando as dependências e configurando a API
-> Instale as dependências do Laravel executando o comando na **raiz do projeto**:
-* docker-compose exec php7_base composer install 
-> Corriga as permissões dos diretórios. Execute os comandos abaixo no diretório **api** (Referência: ):
+*Instale as dependências do Laravel executando o comando na **raiz do projeto**:*
+* docker-compose exec php7_base composer install
+
+*Corriga as permissões dos diretórios. Execute os comandos abaixo no diretório **api** (Referência: ):*
+
 * sudo chgrp -R www-data storage bootstrap/cache
 * sudo chmod -R ug+rwx storage bootstrap/cache
-> Crie o arquivo .env do diretório **api**, utilizando o .env.example como base:
+
+*Crie o arquivo .env do diretório **api**, utilizando o .env.example como base:*
 * cp .env_example .env
-> Gere a chave do projeto executando o comando na **raiz do projeto**:
+*Gere a chave do projeto executando o comando na **raiz do projeto**:*
 * docker-compose exec php7_base php artisan key:generate
 
 ## Utilização
@@ -53,9 +56,11 @@ As seguintes tecnologias estão incluídas:
 ### Comunicação entre containers
 *Os containers podem se "encontrar" através de 2 formas de URL diferentes: **localhost:{container_port}** ou **ipv4_ipaddress:{container_port}**.*
 
-***Localhost**: No arquivo .env, estão as portas definidas para os containers. Dessa forma, o acesso a os mesmos é definido através de localhost:{container_port}. 
-Exemplo 1: Se a porta definida para o container React for 3001, então para visualizar sua aplicação no browser, digite localhost:3001. 
-**Obs:** Se a porta definida para o container nginx_base for a padrão (80), então o acesso a API pode ser feito diretamente através de **localhost**, sem a necessidade de informar porta*
+***Localhost**: No arquivo .env, estão as portas definidas para os containers. Dessa forma, o acesso a os mesmos é definido através de localhost:{container_port}.*
+
+- Exemplo: Se a porta definida para o container React for 3001, então para visualizar sua aplicação no browser, digite localhost:3001.
+
+>**Obs:** Se a porta definida para o container nginx_base for a padrão (80), então o acesso a API pode ser feito diretamente através de **localhost**, sem a necessidade de informar porta
 
 ***IPV4**: Uma rede interna foi criada para facilitar a comunicação entre os containers. Seus Ip's podem ser verificados através da configuração Network > static-network > ipv4_address, onde cada container possui seu próprio IP.*
 
