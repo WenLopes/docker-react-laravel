@@ -11,7 +11,7 @@ function App() {
      * Example: axios.get('http://localhost:{WEBSERVER_PORT}'))
      */
     
-    axios.get('http://localhost:800').then(res => console.log(res))
+    axios.get('http://localhost/testing').then(res => console.log(res))
 
   }, [])
 
