@@ -1,4 +1,4 @@
-# Projeto: Docker - Laravel - React
+# Docker - React - Laravel
 
 ## O que está contido nesse projeto?
 
@@ -29,6 +29,8 @@ As seguintes tecnologias estão incluídas:
 
 ### 2. Configure as variáveis de ambiente
 > Na **raiz do projeto**, crie o arquivo .env utilizando o arquivo .env.example como base. Modifique o valor das variáveis de acordo com a sua preferência.
+
+* cp .env_example .env
 
 *(Opcional) Se desejar, altere as portas padrão da aplicação no arquivo .env*
 
