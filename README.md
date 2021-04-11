@@ -38,18 +38,18 @@ As seguintes tecnologias estão incluídas:
 * docker-compose up --build
 
 ### 4. Instalando as dependências e configurando a API
-*Instale as dependências do Laravel executando o comando na **raiz do projeto**:*
+*4.1 Instale as dependências do Laravel executando o comando na **raiz do projeto**:*
 * docker-compose exec php7_base composer install
 
-*Corriga as permissões dos diretórios, executando os comandos abaixo no diretório **api**:*
+*4.2 Corriga as permissões dos diretórios, executando os comandos abaixo no diretório **api**:*
 
 * sudo chgrp -R www-data storage bootstrap/cache
 * sudo chmod -R ug+rwx storage bootstrap/cache
 
-*Crie o arquivo .env do diretório **api**, utilizando o .env.example como base:*
+*4.3 Crie o arquivo .env do diretório **api**, utilizando o .env.example como base:*
 * cp .env_example .env
 
-*Gere a chave do projeto executando o comando na **raiz do projeto**:*
+*4.4 Gere a chave do projeto executando o comando na **raiz do projeto**:*
 * docker-compose exec php7_base php artisan key:generate
 
 ## Utilização
