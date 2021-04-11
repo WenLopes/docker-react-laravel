@@ -41,13 +41,14 @@ As seguintes tecnologias estão incluídas:
 *Instale as dependências do Laravel executando o comando na **raiz do projeto**:*
 * docker-compose exec php7_base composer install
 
-*Corriga as permissões dos diretórios. Execute os comandos abaixo no diretório **api** (Referência: ):*
+*Corriga as permissões dos diretórios, executando os comandos abaixo no diretório **api**:*
 
 * sudo chgrp -R www-data storage bootstrap/cache
 * sudo chmod -R ug+rwx storage bootstrap/cache
 
 *Crie o arquivo .env do diretório **api**, utilizando o .env.example como base:*
 * cp .env_example .env
+
 *Gere a chave do projeto executando o comando na **raiz do projeto**:*
 * docker-compose exec php7_base php artisan key:generate
 
